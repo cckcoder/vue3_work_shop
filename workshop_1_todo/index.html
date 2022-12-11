@@ -12,16 +12,27 @@
 
     <div class="container is-max-desktop mt-5">
         <h1 class="title">Todo List</h1>
-        <form class="box">
+        <form class="box" @submit.prevent="submitTodo">
           <div class="field">
             <label class="label">Todo:</label>
             <div class="control">
-              <input class="input" type="text" placeholder="Learning Vue">
+              <input 
+                v-model="todo"
+                class="input" 
+                type="text" 
+                placeholder="Learning Vue"
+              >
             </div>
           </div>
 
-          <button class="button is-primary">Add to do</button>
+          <input class="button is-primary" type="submit" value="Add To Do">
         </form>
+
+        <div 
+          v-for="(todo, index) in todos"
+          class="box title">
+          {{ todo }} x
+        </div>
     </div>
 
   </div>
