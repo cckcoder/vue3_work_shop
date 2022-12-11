@@ -8,6 +8,7 @@ const app = Vue.createApp({
   methods: {
     submitTodo() {
       this.todos.push(this.todo)
+      this.todo = ''
     }
   }
 }).mount('#app')
